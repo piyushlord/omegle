@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-ink-950 text-slate-200 font-sans;
+  }
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply bg-white/[0.06] border border-white/[0.10] backdrop-blur-2xl;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 hover:bg-brand-400 text-ink-950 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30;
+  }
+  .btn-ghost {
+    @apply btn bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/10;
+  }
+  .btn-danger {
+    @apply btn bg-rose-500 hover:bg-rose-400 text-white;
+  }
+  .input {
+    @apply w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-brand-400/60 focus:ring-2 focus:ring-brand-400/20;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+}
